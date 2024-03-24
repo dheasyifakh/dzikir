@@ -23,7 +23,7 @@ const DzikirDetail = () => {
             <div className="md:col-span-2 lg:col-span-3 sm:pl-3 md:pl-10 lg:pl-10">
             <div className="mt-4 flex md:justify-end sm:justify-center">
                 <button className='mr-3 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow' onClick={toggleVisibility}>{showTranslation ? 'Show Translation' : 'Hide Translate'}</button>
-                <button className='rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow'>Hide Faedah</button>
+                {/* <button className='rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow'>Hide Faedah</button> */}
             </div>
               <DzikirItem
                 data={{
@@ -38,6 +38,7 @@ const DzikirDetail = () => {
                     'Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.',
                   time: '',
                 }}
+                isHidden={showTranslation}
               />
             {data.dzikr
               .filter((item)=>['', params.time].includes(item.time))
@@ -92,23 +93,6 @@ const DzikirDetail = () => {
                     />
                   )
                 }
-                // else{
-                //   return (
-                //     <div key={item.id}>
-                //             <div>
-                //               <h3 className='font-bold'>{item.title}</h3>
-
-                //             <div
-                //             dangerouslySetInnerHTML={{__html: item.arabic}}
-                //           />
-                //               <b>{item.note}</b>
-                //             </div>
-                        
-                //           <i className='my-12'>{item.latin}</i>
-                      
-                //     </div>
-                //   )
-                // }
               })
               }
             </div>

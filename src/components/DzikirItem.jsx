@@ -69,7 +69,7 @@ const DzikirItem = ({ index,
 
               <p className="hidden sm:block sm:text-xs sm:text-gray-500">
                 Lihat faedah
-                <a href="#" className="font-medium underline hover:text-gray-700"> John </a>
+                {/* <a href="#" className="font-medium underline hover:text-gray-700"> John </a> */}
               </p>
             </div>
             <div className="mt-5"></div>
