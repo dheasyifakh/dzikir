@@ -34,12 +34,20 @@ const Tasbih = () => {
     };
   }, []);
   return (
-    <div className={`fixed ${isMobile ? 'bottom-0' : 'right-10'} w-64 h-64 bg-gray-200 p-4 shadow-lg`}>
+    <div className={`fixed ${isMobile ? 'bottom-0' : 'right-6'} bg-slate-100 p-4 shadow-lg flex flex-col justify-center items-center`}>
     {/* Sidebar content */}
     <h1>Digital Tasbih</h1>
-      <p>Count: {count}</p>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleReset}>Reset</button>
+    <div className="bg-black text-green-400 font-mono text-3xl px-2 py-1 rounded-md mb-4">
+        {count}
+      </div>
+      <div className="flex gap-4">
+        <button onClick={handleIncrement} className="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+          Add
+        </button>
+        <button onClick={handleReset} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+          Reset
+        </button>
+      </div>
   </div>
   )
 }

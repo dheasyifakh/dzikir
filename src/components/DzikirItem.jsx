@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { FaCheckDouble } from "react-icons/fa";
 
 const DzikirItem = ({ index,
   noFaedah,
@@ -34,25 +35,7 @@ const DzikirItem = ({ index,
   }, [isRead]);
 
   return (
-    <div className="my-10">
-        {/* {data.dzikr.map((item)=>(
-        <div key={item.id}>
-          <div className="m-4">
-            {item.arabic}
-            <br />
-            <i>{item.latin}</i>
-            
-            <br />
-            {item.translate_id}
-            <br />
-            {item.faedah} <b>{item.note}</b>
-            {item.narrator}
-          </div>
-          
-        </div>
-      ))
-
-      } */}
+    <div className="my-10"> 
       
       <article className="rounded-xl border-2 border-gray-100 bg-white" {...props} key={data.id}>
         <div className="p-4 sm:p-6 lg:p-8">
@@ -78,24 +61,7 @@ const DzikirItem = ({ index,
             <p className='text-sm text-gray-700 my-5 font-bold'>{data.note}</p>
             <div className="mt-2 sm:flex sm:items-center sm:gap-2">
               <div className="flex items-center gap-1 text-gray-500">
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                  />
-                </svg> */}
-
-                {/* <p className="text-xs">14 comments</p> */}
-                {/* {!isRead && <button className="text-xs" onClick={markAsRead}>Mark as Read</button>} */}
-                <button className={!isRead ? "text-xs text-gray-800" : "text-xs text-blue-600"} onClick={markAsRead}>Mark as Read</button>
+                <button className={!isRead ? "text-xs text-gray-800" : "text-xs text-blue-600"} onClick={markAsRead}><FaCheckDouble className='text-xl'/></button>
               </div>
 
               <span className="hidden sm:block" aria-hidden="true">&middot;</span>
