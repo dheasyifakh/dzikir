@@ -4,6 +4,7 @@ import { FaCheckDouble } from "react-icons/fa";
 const DzikirItem = ({ index,
   noFaedah,
   data,
+  isHidden,
   ...props}) => {
   const [isRead, setIsRead] = useState(false);
 
@@ -56,7 +57,7 @@ const DzikirItem = ({ index,
             </div>
 
             <p className="text-sm text-gray-700 my-5">
-              "{data.translate_id}" <strong>{data.narrator && `${data.narrator}`}</strong>
+              {!isHidden && data.translate_id} <strong>{data.narrator && `${data.narrator}`}</strong>
             </p>
             <p className='text-sm text-gray-700 my-5 font-bold'>{data.note}</p>
             <div className="mt-2 sm:flex sm:items-center sm:gap-2">

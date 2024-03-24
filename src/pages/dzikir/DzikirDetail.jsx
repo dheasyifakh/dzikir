@@ -5,8 +5,11 @@ import { useParams } from 'react-router-dom'
 import { data } from '../../data/dzikr'
 
 const DzikirDetail = () => {
-  const [showTranslation, setShowTranslation] = useState(true);
+  const [showTranslation, setShowTranslation] = useState(false);
 
+  const toggleVisibility = () => {
+    setShowTranslation(!showTranslation);
+  };
   let params = useParams()
   console.log(params.time)
   return (
@@ -19,7 +22,7 @@ const DzikirDetail = () => {
             {/* <DzikirItem time={params.time}/> */}
             <div className="md:col-span-2 lg:col-span-3 sm:pl-3 md:pl-10 lg:pl-10">
             <div className="mt-4 flex md:justify-end sm:justify-center">
-                <button className='mr-3 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow'>Hide Translate</button>
+                <button className='mr-3 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow' onClick={toggleVisibility}>{showTranslation ? 'Show Translation' : 'Hide Translate'}</button>
                 <button className='rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow'>Hide Faedah</button>
             </div>
               <DzikirItem
@@ -51,12 +54,14 @@ const DzikirDetail = () => {
                           <DzikirItem
                             index={index}
                             noFaedah={index < arabics.length - 1}
+                            isHidden={showTranslation}
                             data={{
                               ...item,
                               arabic,
                               narrator: narrators[index],
                               translate: translates[index],
-                              title
+                              title,
+
                             }}
                             key={item.id}
                           />
@@ -83,6 +88,7 @@ const DzikirDetail = () => {
                     <DzikirItem
                       data={item}
                       key={item.id}
+                      isHidden={showTranslation}
                     />
                   )
                 }
