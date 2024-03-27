@@ -9,7 +9,7 @@ const DzikirItem = ({ index,
   const [isRead, setIsRead] = useState(false);
 
   const markAsRead = () => {
-    setIsRead(true);
+    setIsRead(!isRead);
   };
 
   // Function to save the state to localStorage
@@ -67,10 +67,10 @@ const DzikirItem = ({ index,
 
               <span className="hidden sm:block" aria-hidden="true">&middot;</span>
 
-              <p className="hidden sm:block sm:text-xs sm:text-gray-500">
+              {/* <p className="hidden sm:block sm:text-xs sm:text-gray-500">
                 Lihat faedah
-                {/* <a href="#" className="font-medium underline hover:text-gray-700"> John </a> */}
-              </p>
+                <a href="#" className="font-medium underline hover:text-gray-700"> John </a>
+              </p> */}
             </div>
             <div className="mt-5"></div>
           </div>
